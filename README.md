@@ -10,7 +10,7 @@ To develop program which enables user to select device and then fetch starting p
 
 ### Technologies Used
 - Programming language: Python (Version- Python 3.7.5)
-- Code is developed and tested in Pycharm. 
+- Code is developed in Pycharm environment and tested in Pycharm and Command-line. 
 - Selenium Webdriver. 
 - Chrome driver is used as automated webdriver. 
 
