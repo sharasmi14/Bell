@@ -18,7 +18,7 @@ To develop program which enables user to select device and then fetch starting p
 - Download bell.py file. 
 - Make sure selenium Module is imported using "pip install selenium" on command line. 
 - Provide correct executatbe path for chromedriver at following 115th line of code
-  driver = webdriver.Chrome(executable_path= "    ")
+  driver = webdriver.Chrome(executable_path= "/Users/asmitasharma/Downloads/chromedriver 3")
 - After updating your bell.py file, save it in a folder and open that folder in command line using command: *cd foldername*.
 - Run python code as a command in given format: python bell.py
 - Program should work on command line, user will get welcome message and list of devices to select one device. 
