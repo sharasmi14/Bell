@@ -42,6 +42,12 @@ def print_list_of_devices():
     li1 = li.split('\n')
     print("11 {}".format(li1[1]))                 # device 12th
     
+def perform_task(i):
+    click_on_device(i)
+    name_of_device()
+    select_click_elements()
+    print_description(i)
+    ask_user_print_list()
     
 def click_on_device(i):
     l1 = driver.find_elements_by_xpath('//a[@class="rsx-product-hotspot"]')
