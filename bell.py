@@ -67,6 +67,42 @@ def select_click_elements():
 
     t1 = driver.find_elements_by_xpath('//span[@class="title"]')  # Priint title: Pay a subsidized phone price
     print("OPTION SELECTED {}".format(t1[1].text))
+    
+def print_description(i):
+    pr = driver.find_elements_by_xpath('//div[@class="rsx-price"]')  # Starting price
+    pl = driver.find_elements_by_xpath('//p[@class="rsx-txt-size-18"]')  # selecting elements to print terms
+    pl2 = driver.find_elements_by_xpath('//p[@class="1rsx-note"]')  # selecting elements to print terms
+    pl23 = driver.find_elements_by_xpath('//p[@style="font-size:12px;"]')  # selecting elements to print terms
+
+    if i in [0,1,4,5,6,7,8,10]:
+        # Printing Starting Prices and Terms
+        print("1. Price: {}\n   Terms: {}\n          {}\n".format(pr[0].text,pl[0].text,pl2[0].text))
+        print("2. Price: {}\n   Terms: {}\n          {}\n".format(pr[1].text, pl[1].text, pl2[1].text))
+        print("3. Price: {}\n   Terms: {}\n".format(pr[2].text, pl[2].text, pl2[1].text))
+
+
+    elif i in [2,3,9]:
+        print("1. Price: {}\n   Terms: {}\n          {}\n          {}\n".format(pr[0].text,pl[0].text,pl2[0].text,pl23[0].text))  # Printing Starting Prices and Terms
+        print("2. Price: {}\n   Terms: {}\n          {}\n".format(pr[1].text,pl[1].text,pl2[1].text))
+        print("3. Price: {}\n   Terms: {}\n          {}\n".format(pr[2].text, pl[2].text, pl2[2].text))
+        print("4. Price: {}\n   Terms: {}\n".format(pr[3].text,pl[3].text))
+
+
+    elif i == 11:
+        print("1. Price: {}\n   Terms: {}\n          {}\n".format(pr[0].text,pl[0].text,pl2[0].text))  # Printing Starting Price and Terms
+        print("2. Price: {}\n   Terms: {}\n          {}\n".format(pr[1].text, pl[1].text, pl2[1].text))
+
+def ask_user_print_list():
+    print('Enter "Y" to print list of devices again ')
+    ans = input()
+    if ans == 'Y':
+        print_list_of_devices()
+
+    driver.get("https://www.bell.ca/Mobility/Smartphones_and_mobile_internet_devices")
+
+    print("**********************************************************************************")
+    print("Enter the ID Number of device you want to select (mentioned with names of devices)")
+    print("**********************************************************************************")
 
 
 # Setting driver to Google Chrome, Giving execulatbe path of chromedriver
