@@ -41,6 +41,32 @@ def print_list_of_devices():
     li = at[11].text
     li1 = li.split('\n')
     print("11 {}".format(li1[1]))                 # device 12th
+    
+    
+def click_on_device(i):
+    l1 = driver.find_elements_by_xpath('//a[@class="rsx-product-hotspot"]')
+    driver.implicitly_wait(3)
+    l1[i].click()
+
+
+def name_of_device():
+    n1 = driver.find_element_by_xpath("//h1[@class='rsx-bell-font txtBlack2']")
+    print("NAME OF DEVICE:  {}".format(n1.text))
+    print("\n")
+
+def select_click_elements():
+    # Selecting elements to fetch subsidized phone price info
+
+    p1 = driver.find_element_by_xpath(
+        '//div[@class="bcx-pricing-options-header1 rsx-txt-center rsx-bell-font rsx-txt-white rsx-txt-size-22"]')
+    print("UNDER: {}".format(p1.text))  # print heading
+
+    r1 = driver.find_elements_by_xpath('//span[@class="rsx-radio"]')
+    r1[1].click()  # Selecting elements to fetch subsidized phone price info
+    driver.implicitly_wait(6)
+
+    t1 = driver.find_elements_by_xpath('//span[@class="title"]')  # Priint title: Pay a subsidized phone price
+    print("OPTION SELECTED {}".format(t1[1].text))
 
 
 # Setting driver to Google Chrome, Giving execulatbe path of chromedriver
